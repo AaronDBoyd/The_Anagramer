@@ -26,13 +26,13 @@ class Anagram
 
   def vowel_checker()
     vowels = ['a','e','i','o','u','y']
-    array = @word.split(//)
+    array = @string1.split(//)
 
     array.each do |letter|
       if vowels.include?(letter)
-        true
+        return true
       else
-        false
+        return false
       end
     end
   end
