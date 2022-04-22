@@ -20,10 +20,10 @@ describe(Anagram) do
       expect(also_not.anagram_checker).to(eq('Is NOT an anagram'))
     end
 
-    # it('will check to see that two words are anagrams if they have capital letters') do
-    #   anagram = Anagram.new
-    #   expect(anagram.anagram_checker('aRt', 'rAT')).to(eq('Is an anagram'))
-    # end
+    it('will check to see that two words are anagrams if they have capital letters') do
+      anagram = Anagram.new('aRt', 'rAT')
+      expect(anagram.anagram_checker).to(eq('Is an anagram'))
+    end
 
   #   it('will recognize when there are the same latters but unequal amounts') do 
   #     anagram = Anagram.new
