@@ -10,18 +10,20 @@ describe(Anagram) do
     end
   end
 
-  # describe('#anagram_checker') do
-  #   it('will check to see if two words are anagrams') do
-  #     anagram = Anagram.new
-  #     expect(anagram.anagram_checker('art', 'rat')).to(eq('Is an anagram'))
-  #     expect(anagram.anagram_checker('cat', 'bat')).to(eq('Is NOT an anagram'))
-  #     expect(anagram.anagram_checker('cat', 'at')).to(eq('Is NOT an anagram'))
-  #   end
+  describe('#anagram_checker') do
+    it('will check to see if two words are anagrams') do
+      anagram = Anagram.new('art', 'rat')
+      not_anagram = Anagram.new('cat', 'rat')
+      also_not = Anagram.new('cat', 'at')
+      expect(anagram.anagram_checker).to(eq('Is an anagram'))
+      expect(not_anagram.anagram_checker).to(eq('Is NOT an anagram'))
+      expect(also_not.anagram_checker).to(eq('Is NOT an anagram'))
+    end
 
-  #   it('will check to see that two words are anagrams if they have capital letters') do
-  #     anagram = Anagram.new
-  #     expect(anagram.anagram_checker('aRt', 'rAT')).to(eq('Is an anagram'))
-  #   end
+    # it('will check to see that two words are anagrams if they have capital letters') do
+    #   anagram = Anagram.new
+    #   expect(anagram.anagram_checker('aRt', 'rAT')).to(eq('Is an anagram'))
+    # end
 
   #   it('will recognize when there are the same latters but unequal amounts') do 
   #     anagram = Anagram.new
@@ -40,6 +42,6 @@ describe(Anagram) do
     # it('will check two sentences to see if they are anagrams') do
     #   expect('').to(eq())
     # end
-  # end
+  end
 end
 
