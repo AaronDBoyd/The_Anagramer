@@ -15,12 +15,12 @@ describe(Anagram) do
       expect(anagram.anagram_checker('aRt', 'rAT')).to(eq('Is an anagram'))
     end
 
-    # it('will recognize when there are the same latters but unequal amounts') do 
-    #   anagram = Anagram.new
-    #   expect(anagram.anagram_checker('att', 'aat')).to(eq('Is NOT an anagram'))
-    # end
+    it('will recognize when there are the same latters but unequal amounts') do 
+      anagram = Anagram.new
+      expect(anagram.anagram_checker('att', 'aat')).to(eq('Is NOT an anagram'))
+    end
 
-    # it('will check to see if entered words are actually words') do
+    # it('will check to see if entered words contain vowels') do
     #   expect('').to(eq())
     # end
 
