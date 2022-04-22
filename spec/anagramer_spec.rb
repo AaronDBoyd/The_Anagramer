@@ -6,7 +6,7 @@ describe(Anagram) do
     it('will recognize object attributes') do
       anagram = Anagram.new('art', 'rat')
       expect(anagram.string1).to(eq('art'))
-      expect(anagram.string2).to(eq('art'))
+      expect(anagram.string2).to(eq('rat'))
     end
   end
 
