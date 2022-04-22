@@ -7,6 +7,7 @@ describe(Anagram) do
       anagram = Anagram.new
       expect(anagram.anagram_checker('art', 'rat')).to(eq('Is an anagram'))
       expect(anagram.anagram_checker('cat', 'bat')).to(eq('Is NOT an anagram'))
+      expect(anagram.anagram_checker('cat', 'at')).to(eq('Is NOT an anagram'))
     end
 
     # it('will check to see that two words are anagrams if they have capital letters') do
