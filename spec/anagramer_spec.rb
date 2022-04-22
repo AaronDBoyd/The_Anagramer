@@ -43,5 +43,14 @@ describe(Anagram) do
     #   expect('').to(eq())
     # end
   end
+
+  describe('#vowel_checker') do
+    it('will return true if the anagram contains a vowel') do
+      has_vowel = Anagram.new('art', 'rat')
+      no_vowel = Anagram.new('chz', 'zhc')
+      expect(has_vowel.vowel_checker).to(eq(true))
+      expect(no_vowel.vowel_checker).to(eq(false))
+    end
+  end
 end
 
