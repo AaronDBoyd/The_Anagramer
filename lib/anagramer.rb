@@ -19,19 +19,38 @@ require 'pry'
 
 class Anagram 
   def anagram_checker(word1, word2)
-    array_one = word1.downcase.split(//)
-    array_two = word2.downcase.split(//)
+    array_one = word1.downcase.split(//).sort
+    array_two = word2.downcase.split(//).sort
 
     if array_one.length != array_two.length
       return "Is NOT an anagram"
-    else
-      array_one.each do |letter|
-        if array_two.include?(letter)
+    elsif array_one == array_two        
           return "Is an anagram"
         else
           return "Is NOT an anagram"
-        end
-      end
+        
+      
     end
   end
 end
+
+
+
+# class Anagram 
+#   def anagram_checker(word1, word2)
+#     array_one = word1.downcase.split(//)
+#     array_two = word2.downcase.split(//)
+
+#     if array_one.length != array_two.length
+#       return "Is NOT an anagram"
+#     else
+#       array_one.each do |letter|
+#         if array_two.include?(letter)
+#           return "Is an anagram"
+#         else
+#           return "Is NOT an anagram"
+#         end
+#       end
+#     end
+#   end
+# end
