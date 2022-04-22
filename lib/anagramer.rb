@@ -18,13 +18,35 @@ require 'pry'
 
 
 class Anagram 
-  def anagram_checker(word1, word2)
-    array_one = word1.downcase.split(//).sort
-    array_two = word2.downcase.split(//).sort
+  attr_accessor(:string1, :string2)
+  def initialize(string1, string2)
+    @string1 = string1
+    @string2 = string2 
+  end
+
+  def vowel_checker()
+    vowels = ['a','e','i','o','u','y']
+    array = @word.split(//)
+
+    array.each do |letter|
+      if vowels.include?(letter)
+        true
+      else
+        false
+      end
+    end
+  end
+
+  def anagram_checker()
+    array_one = @string1.downcase.split(//).sort
+    array_two = @string2.downcase.split(//).sort
+    vowels = ['a','e','i','o','u','y']
 
     if array_one.length != array_two.length
       return "Is NOT an anagram"
-    elsif array_one == array_two        
+    # elsif array_one.include?(vowels) || array_two.include?(vowels) 
+    #   return "Is NOT an anagram V"
+    elsif array_one == array_two    
           return "Is an anagram"
         else
           return "Is NOT an anagram"
