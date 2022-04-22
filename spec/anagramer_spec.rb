@@ -2,9 +2,10 @@ require 'anagramer'
 require 'rspec'
 
 describe(Anagram) do
-  describe('anagram_checher') do
+  describe('anagram_checker') do
     it('will check to see if two words are anagrams') do
-      expect('art', 'rat').to(eq('Is an anagram'))
+      anagram = Anagram.new
+      expect(anagram.anagram_checker('art', 'rat')).to(eq('Is an anagram'))
     end
 
     # it('will check to see that two words are anagrams if they have capital letters') do
