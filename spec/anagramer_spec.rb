@@ -25,7 +25,7 @@ describe(Anagram) do
       expect(anagram.anagram_checker).to(eq('Is an anagram'))
     end
 
-    it('will recognize when there are the same latters but unequal amounts') do 
+    it('will recognize when there are the same letters but unequal amounts') do 
       anagram = Anagram.new('aat', 'att')
       expect(anagram.anagram_checker).to(eq('Is NOT an anagram'))
     end
@@ -35,11 +35,12 @@ describe(Anagram) do
       expect(anagram.anagram_checker).to(eq('Is NOT an anagram'))
     end
 
-    # it('will check to see if entered words are actually antigrams') do
-    #   expect('').to(eq())
-    # end
+    it('will check two sentences to see if they are anagrams') do
+      anagram = Anagram.new('Eleven plus two', 'Twelve plus one')
+      expect(anagram.anagram_checker).to(eq('Is an anagram'))
+    end
 
-    # it('will check two sentences to see if they are anagrams') do
+    # it('will check to see if entered words are actually antigrams') do
     #   expect('').to(eq())
     # end
   end
