@@ -40,12 +40,12 @@ class Anagram
   def anagram_checker()
     array_one = @string1.downcase.split(//).sort
     array_two = @string2.downcase.split(//).sort
-    vowels = ['a','e','i','o','u','y']
+    
 
     if array_one.length != array_two.length
       return "Is NOT an anagram"
-    # elsif array_one.include?(vowels) || array_two.include?(vowels) 
-    #   return "Is NOT an anagram V"
+    elsif vowel_checker() == false
+      return "Is NOT an anagram"
     elsif array_one == array_two    
           return "Is an anagram"
         else
