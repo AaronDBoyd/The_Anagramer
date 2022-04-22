@@ -30,10 +30,10 @@ describe(Anagram) do
       expect(anagram.anagram_checker).to(eq('Is NOT an anagram'))
     end
 
-  #   it('will check to see if entered words contain vowels') do
-  #     anagram = Anagram.new
-  #     expect(anagram.anagram_checker('chz', 'zch')).to(eq('Is NOT an anagram V'))
-  #   end
+    it('will check to see if entered words contain vowels') do
+      anagram = Anagram.new('chz', 'zch')
+      expect(anagram.anagram_checker).to(eq('Is NOT an anagram'))
+    end
 
     # it('will check to see if entered words are actually antigrams') do
     #   expect('').to(eq())
@@ -50,6 +50,8 @@ describe(Anagram) do
       no_vowel = Anagram.new('chz', 'zhc')
       expect(has_vowel.vowel_checker).to(eq(true))
       expect(no_vowel.vowel_checker).to(eq(false))
+      # expect(vowel_checker(['a','r','t'])).to(eq(true))
+      # expect(vowel_checker(['c','h','z'])).to(eq(false))
     end
   end
 end
