@@ -19,8 +19,8 @@ require 'pry'
 
 class Anagram 
   def anagram_checker(word1, word2)
-    array_one = word1.split(//)
-    array_two = word2.split(//)
+    array_one = word1.downcase.split(//)
+    array_two = word2.downcase.split(//)
 
     if array_one.length != array_two.length
       return "Is NOT an anagram"
