@@ -47,8 +47,6 @@ describe(Anagram) do
       no_vowel = Anagram.new('chz', 'zhc')
       expect(has_vowel.vowel_checker?).to(eq(true))
       expect(no_vowel.vowel_checker?).to(eq(false))
-      # expect(vowel_checker(['a','r','t'])).to(eq(true))
-      # expect(vowel_checker(['c','h','z'])).to(eq(false))
     end
   end
 
