@@ -5,8 +5,8 @@ describe(Anagram) do
   describe('#initialize') do
     it('will recognize object attributes') do
       anagram = Anagram.new('art', 'rat')
-      expect(anagram.string1).to(eq('art'))
-      expect(anagram.string2).to(eq('rat'))
+      expect(anagram.string1).to(eq(['a','r','t']))
+      expect(anagram.string2).to(eq(['a','r','t']))
     end
   end
 
@@ -39,20 +39,27 @@ describe(Anagram) do
       anagram = Anagram.new('Eleven plus two', 'Twelve plus one')
       expect(anagram.anagram_checker).to(eq('Is an anagram'))
     end
-
-    # it('will check to see if entered words are actually antigrams') do
-    #   expect('').to(eq())
-    # end
   end
 
-  describe('#vowel_checker') do
+  describe('#vowel_checker?') do
     it('will return true if the anagram contains a vowel') do
       has_vowel = Anagram.new('art', 'rat')
       no_vowel = Anagram.new('chz', 'zhc')
-      expect(has_vowel.vowel_checker).to(eq(true))
-      expect(no_vowel.vowel_checker).to(eq(false))
+      expect(has_vowel.vowel_checker?).to(eq(true))
+      expect(no_vowel.vowel_checker?).to(eq(false))
       # expect(vowel_checker(['a','r','t'])).to(eq(true))
       # expect(vowel_checker(['c','h','z'])).to(eq(false))
+    end
+  end
+
+  describe('#anti_gram') do 
+    it('will see if the given strings have no letters in common') do
+      ana = Anagram.new('art', 'rat')
+      anti = Anagram.new('art', 'cow')
+      neither = Anagram.new('art', 'arc')
+      expect(ana.anti_gram?).to(eq(false))
+      expect(anti.anti_gram?).to(eq(true))
+      expect(neither.anti_gram?).to(eq(false))
     end
   end
 end
