@@ -20,15 +20,24 @@ require 'pry'
 class Anagram 
   attr_accessor(:string1, :string2)
   def initialize(string1, string2)
-    @string1 = string1
-    @string2 = string2 
+    @string1 = string1.delete(' ').downcase.split(//).sort
+    @string2 = string2.delete(' ').downcase.split(//).sort 
+    # @string3 = string1 || string2
   end
 
-  def vowel_checker()
-    vowels = ['a','e','i','o','u','y']
-    array = @string1.split(//)
+  # def disco_splits()
+  #   str = @string1 || @string2
+  #   @string3.delete(' ').downcase.split(//).sort
+  # end
 
-    array.each do |letter|
+  def vowel_checker?()
+    vowels = ['a','e','i','o','u','y']
+    # array = @string1.disco_splits()
+      # array = .disco_splits(@string1)
+    # array = @string1.delete(' ').downcase.split(//).sort
+    # array.delete(" ")
+# binding.pry    
+    @string1.each do |letter|
       if vowels.include?(letter)
         return true
       else
@@ -37,16 +46,32 @@ class Anagram
     end
   end
 
-  def anagram_checker()
-    array_one = @string1.downcase.split(//).sort
-    array_two = @string2.downcase.split(//).sort
-    
+  def anti_gram?()
+    @string1.each do |letter|
+      if @string2.include?(letter)
+        return false
+      else
+        return true
+      end 
+    end
+  end
 
+  def anagram_checker()
+    array_one = @string1
+    array_two = @string2
+    # array_one = @string1.delete(' ').downcase.split(//).sort
+    # array_two = @string2.delete(' ').downcase.split(//).sort
+# binding.pry
+    # array_one.delete(' ')
+    # array_two.delete(' ')
+# binding.pry
     if array_one.length != array_two.length
       return "Is NOT an anagram"
-    elsif vowel_checker() == false
+    elsif vowel_checker?() == false
+      
       return "Is NOT an anagram"
-    elsif array_one == array_two    
+    elsif array_one.join == array_two.join
+         
           return "Is an anagram"
         else
           return "Is NOT an anagram"
@@ -56,6 +81,10 @@ class Anagram
   end
 end
 
+# anagram = Anagram.new('Eleven plus two', 'Twelve plus one')
+# anagram = Anagram.new('Eleven plus two', 'Twelve plus one')
+
+# p anagram.vowel_checker
 
 
 # class Anagram 
