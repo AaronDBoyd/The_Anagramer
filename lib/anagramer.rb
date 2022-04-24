@@ -3,30 +3,28 @@ require 'pry'
 class Anagram 
   attr_accessor(:string1, :string2)
   def initialize(string1, string2)
-    @string1 = string1.delete(' ').downcase.split(//).sort
-    @string2 = string2.delete(' ').downcase.split(//).sort 
+    @string1 = string1.delete(' ').downcase.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '').split(//).sort
+    @string2 = string2.delete(' ').downcase.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '').split(//).sort 
   end
 
   def vowel_checker?()
-    vowels = ['a','e','i','o','u','y']
-      
-    @string1.each do |letter|
+    vowels = ['a','e','i','o','u','y'] 
+    @string1.each do |letter|   
       if vowels.include?(letter)
         return true
-      else
-        return false
       end
     end
+    return false    
   end
 
   def anti_gram?()
-    @string1.each do |letter|
+    @string1.each do |letter|      
       if @string2.include?(letter)
         return false
-      else
-        return true
-      end 
+      end
     end
+    return true
+    
   end
 
   def anagram_checker()
@@ -42,3 +40,25 @@ class Anagram
   end
 end
 
+
+
+
+
+
+# def vowel_checker?()
+#   vowels = ['a','e','i','o','u','y']
+#   vowel_count = 0  
+#   @string1.each do |letter|
+#   # p letter
+#   # p vowels     
+#     if vowels.include?(letter)
+#       vowel_count += 1
+#     end
+#   end
+#     if vowel_count > 0
+#       return true
+#     else 
+#       return false  
+    
+#   end
+# end
