@@ -10,7 +10,7 @@ if play == "y"
   puts "Also, an Antigram is when two words or phrases contain none of the same letters."
   puts "Please enter the first word or phrase."
   phrase1 = gets.chomp()
-  puts "Please enter another word or phase to see if it is an Anagram of the second word."
+  puts "Please enter another word or phase to see if it is an Anagram of the first word."
   phrase2 = gets.chomp()
   puts "Please hold....we are processing."
   puts '.'

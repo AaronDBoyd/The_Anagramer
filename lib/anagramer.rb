@@ -43,22 +43,3 @@ end
 
 
 
-
-
-# def vowel_checker?()
-#   vowels = ['a','e','i','o','u','y']
-#   vowel_count = 0  
-#   @string1.each do |letter|
-#   # p letter
-#   # p vowels     
-#     if vowels.include?(letter)
-#       vowel_count += 1
-#     end
-#   end
-#     if vowel_count > 0
-#       return true
-#     else 
-#       return false  
-    
-#   end
-# end
