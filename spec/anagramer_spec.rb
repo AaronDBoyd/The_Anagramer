@@ -60,5 +60,12 @@ describe(Anagram) do
       expect(neither.anti_gram?).to(eq(false))
     end
   end
+
+  describe('#disco_split')do
+    it ('will use a long chain of methods to change the given string into an alphabetical array with no spaces or punctuation and is lowercase') do
+      object = Anagram.new('Is a sentence!', 'Also a sentence...')
+      expect(object.string1).to(eq(["a", "c", "e", "e", "e", "i", "n", "n", "s", "s", "t"]))
+    end
+  end
 end
 
