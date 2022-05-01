@@ -3,8 +3,6 @@ require 'pry'
 class Anagram 
   attr_accessor(:string1, :string2)
   def initialize(string1, string2)
-    # @string1 = string1.delete(' ').downcase.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '').split(//).sort
-    # @string2 = string2.delete(' ').downcase.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '').split(//).sort 
     @string1 = disco_split(string1)
     @string2 = disco_split(string2)
   end
